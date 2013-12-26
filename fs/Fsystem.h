@@ -5,7 +5,7 @@
  *
  **************************************************************************/
 /**
- * @file fsystem.cpp
+ * @file fsystem.h
  * @author lker-zy(sdu2007gj@gmail.com)
  * @date 2013/05/23 :19:24
  * @version $Revision$
@@ -19,8 +19,6 @@
 #include <regex.h>
 #include <boost/function.hpp>
 
-
-class FileQueue;
 
 class RegxFilter {
 public:
@@ -70,7 +68,6 @@ private:
 	void walkdir(const char * pathname);
 
 	const char * basedir_;
-
 	FilterFuncType filter_;
 	TraversalCallback travel_cb_;
 };
@@ -88,7 +85,6 @@ public:
 
 	bool operator() (const char*);
 	bool operator() () {
-		check_queue_->end();
 		return true;
 	}
 

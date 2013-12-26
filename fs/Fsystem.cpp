@@ -81,10 +81,8 @@ bool RegxFilter::operator() (const char* path) {
 }
 
 void Fsystem::walk() {
-	sleep(3);
 	this->walkdir(basedir_);
 	travel_cb_.done_notify();
-	sleep(10);
 }
 
 void Fsystem::walkdir(const char * pathname) {
